@@ -2,5 +2,6 @@
 
 코딩 테스트 문제와 풀이를 기록하여 학습 정리에 사용하기 위한 repo입니다.
 
-References
+
+## References
   1. 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
