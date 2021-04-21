@@ -1,5 +1,5 @@
 # Problem : https://www.acmicpc.net/problem/1011
-# Date : 2020-02-25
+# Date : 2020-02-26
 
 import math
 
