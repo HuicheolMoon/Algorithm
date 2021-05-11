@@ -2,4 +2,7 @@
 venv/
 .idea/
 playground/
+
+# Files to ignore
+.gitignore
 practice.py
