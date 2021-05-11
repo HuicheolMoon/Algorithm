@@ -1,3 +1,5 @@
 # Folders to ignore
 venv/
 .idea/
+playground/
+practice.py
