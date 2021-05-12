@@ -1,15 +1,15 @@
 class Node:
-    def __init__(self, value):
+    def __init__(self, value: int) -> None:
         self.value = value
         self.next = None
 
 
 class LinkedList:
-    def __init__(self):
+    def __init__(self) -> None
         self.head = None
         self.length = 0
 
-    def append_node(self, node):
+    def append_node(self, node: Node) -> None:
         if self.length == 0:
             self.head = node
         else:
@@ -19,7 +19,7 @@ class LinkedList:
             tail.next = node
         self.length += 1
 
-    def delete_node(self, idx):
+    def delete_node(self, idx: int) -> None:
         if idx >= self.length:
             raise IndexError("인덱스가 리스트 범위 밖입니다.")
         elif idx == 0:
@@ -35,7 +35,7 @@ class LinkedList:
             front.next = ghost.next
         self.length -= 1
 
-    def insert_node(self, node, idx):
+    def insert_node(self, node: Node, idx: int) -> None:
         if idx > self.length:
             raise IndexError("인덱스가 리스트 범위 밖입니다.")
         elif idx == 0:
@@ -51,16 +51,15 @@ class LinkedList:
             front.next = node
         self.length += 1
 
-    def get_index(self, value):
-        if self.length == 0:
-            raise IndexError("해당하는 값이 없습니다.")
-        tail = self.head
-        idx = 0
-        while tail:
-            if tail.value == value:
-                return idx
-            tail = tail.next
-            idx += 1
+    def get_index(self, value: int) -> int:
+        if self.length > 0:
+            tail = self.head
+            idx = 0
+            while tail:
+                if tail.value == value:
+                    return idx
+                tail = tail.next
+                idx += 1
         raise IndexError("해당하는 값이 없습니다.")
 
 

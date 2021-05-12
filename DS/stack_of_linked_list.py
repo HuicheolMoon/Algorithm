@@ -1,16 +1,16 @@
 class Node:
-    def __init__(self, value):
+    def __init__(self, value: int) -> None:
         self.value = value
         self.next = None
 
 
 class Stack:
-    def __init__(self):
+    def __init__(self) -> None:
         self.head = None
         self.tail = None
         self.length = 0
 
-    def push(self, value):
+    def push(self, value: int) -> None:
         node = Node(value)
         if self.length == 0:
             self.head = node
@@ -19,7 +19,7 @@ class Stack:
         self.tail = node
         self.length += 1
 
-    def pop(self):
+    def pop(self) -> int:
         if self.length == 0:
             raise IndexError("빈 스택입니다.")
         elif self.length == 1:
@@ -36,7 +36,7 @@ class Stack:
         print(result)
         return result
 
-    def peek(self):
+    def peek(self) -> int:
         if self.length == 0:
             raise IndexError("빈 스택입니다.")
         else:
@@ -44,10 +44,10 @@ class Stack:
             print(result)
             return result
 
-    def is_empty(self):
-        result = True if self.length == 0 else False
-        print(result)
-        return result
+    def is_empty(self) -> bool:
+        whether = True if self.length == 0 else False
+        print(whether)
+        return whether
 
 
 if __name__ == "__main__":
