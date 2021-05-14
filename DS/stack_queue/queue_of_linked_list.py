@@ -4,13 +4,13 @@ class Node:
         self.next = None
 
 
-class Stack:
+class Queue:
     def __init__(self) -> None:
         self.head = None
         self.tail = None
         self.length = 0
 
-    def push(self, value: int) -> None:
+    def enqueue(self, value: int) -> None:
         node = Node(value)
         if self.length == 0:
             self.head = node
@@ -19,28 +19,24 @@ class Stack:
         self.tail = node
         self.length += 1
 
-    def pop(self) -> int:
+    def dequeue(self) -> int:
         if self.length == 0:
-            raise IndexError("빈 스택입니다.")
+            raise IndexError("빈 큐입니다.")
         elif self.length == 1:
-            result = self.tail.value
+            result = self.head.value
             self.head = None
             self.tail = None
         else:
-            new_tail = self.head
-            for _ in range(self.length - 2):
-                new_tail = new_tail.next
-            result = self.tail.value
-            new_tail.next = None
-            self.tail = new_tail
+            result = self.head.value
+            self.head = self.head.next
         self.length -= 1
         return result
 
     def peek(self) -> int:
         if self.length == 0:
-            raise IndexError("빈 스택입니다.")
+            raise IndexError("빈 큐입니다.")
         else:
-            result = self.tail.value
+            result = self.head.value
             return result
 
     def is_empty(self) -> bool:
@@ -49,14 +45,14 @@ class Stack:
 
 
 if __name__ == "__main__":
-    x1 = Stack()
-    x1.push(4)
-    x1.push(2)
-    x1.push(3)
-    x1.push(1)
-    print(x1.pop())
+    x1 = Queue()
+    x1.enqueue(4)
+    x1.enqueue(2)
+    x1.enqueue(3)
+    x1.enqueue(1)
+    print(x1.dequeue())
     print(x1.peek())
-    print(x1.pop())
-    x1.push(5)
+    print(x1.dequeue())
+    x1.enqueue(5)
     print(x1.peek())
     print(x1.is_empty())

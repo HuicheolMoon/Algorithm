@@ -48,15 +48,46 @@ class Stack:
         return whether
 
 
+class Queue:
+    def __init__(self) -> None:
+        self.s1 = Stack()
+        self.s2 = Stack()
+        self.length = 0
+
+    def enqueue(self, value: int) -> None:
+        self.s1.push(value)
+        self.length += 1
+
+    def dequeue(self) -> int:
+        if self.s1.is_empty() and self.s2.is_empty():
+            raise IndexError("빈 큐입니다.")
+        elif self.s2.is_empty():
+            for _ in range(self.s1.length):
+                self.s2.push(self.s1.pop())
+        self.length -= 1
+        return self.s2.pop()
+
+    def peek(self) -> int:
+        if self.s1.is_empty() and self.s2.is_empty():
+            raise IndexError("빈 큐입니다.")
+        elif self.s2.is_empty():
+            for _ in range(self.s1.length):
+                self.s2.push(self.s1.pop())
+        return self.s2.peek()
+
+    def is_empty(self) -> bool:
+        return self.s1.is_empty() and self.s2.is_empty()
+
+
 if __name__ == "__main__":
-    x1 = Stack()
-    x1.push(4)
-    x1.push(2)
-    x1.push(3)
-    x1.push(1)
-    print(x1.pop())
+    x1 = Queue()
+    x1.enqueue(4)
+    x1.enqueue(2)
+    x1.enqueue(3)
+    x1.enqueue(1)
+    print(x1.dequeue())
     print(x1.peek())
-    print(x1.pop())
-    x1.push(5)
+    print(x1.dequeue())
+    x1.enqueue(5)
     print(x1.peek())
     print(x1.is_empty())
