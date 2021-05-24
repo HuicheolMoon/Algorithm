@@ -15,7 +15,9 @@ def kruskal(graph):
         edge = heapq.heappop(edges)
         if uf[edge[1]] != uf[edge[2]]:
             mine, maxe = min(edge[1], edge[2]), max(edge[1], edge[2])
-            uf[maxe] = uf[mine]
+            for i in range(len(uf)):
+                if uf[i] == maxe:
+                    uf[i] = mine
             mst.append(edge)
     return mst
 
