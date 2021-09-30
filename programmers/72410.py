@@ -1,5 +1,6 @@
 # Problem : https://programmers.co.kr/learn/courses/30/lessons/72410
 # Date : 2020-02-24
+# 2021 KAKAO BLIND RECRUITMENT 신규 아이디 추천
 
 import re
 
