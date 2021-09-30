@@ -1,5 +1,7 @@
 # Problem : https://programmers.co.kr/learn/courses/30/lessons/17681
 # Date : 2020-02-24
+# 2018 KAKAO BLIND RECRUITMENT [1차] 비밀지도
+
 
 def union_arr(n, list1, list2):
     result = []
