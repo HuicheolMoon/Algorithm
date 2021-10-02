@@ -1,4 +1,4 @@
-# Problem : https://programmers.co.kr/learn/courses/30/lessons/600
+# Problem : https://programmers.co.kr/learn/courses/30/lessons/60057
 # Date : 2021-09-03
 # 2020 KAKAO BLIND RECRUITMENT - 문자열 압축
 
