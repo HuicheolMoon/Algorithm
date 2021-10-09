@@ -1,6 +1,6 @@
 # 두 용액
 # Problem : https://www.acmicpc.net/problem/2470
-# Date : 2021-10-05
+# Date : 2021-10-04
 
 import sys
 
