@@ -1,5 +1,5 @@
 # Problem : https://programmers.co.kr/learn/courses/30/lessons/49189
-# Date : 2021-10-03
+# Date : 2021-10-04
 # 가장 먼 노드
 
 from collections import defaultdict
