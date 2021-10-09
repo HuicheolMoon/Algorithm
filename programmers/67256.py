@@ -1,5 +1,5 @@
 # Problem : https://programmers.co.kr/learn/courses/30/lessons/67256
-# Date : 2020-02-24
+# Date : 2021-02-24
 # 2020 카카오 인턴십 키패드 누르기
 
 def solution(numbers, hand):
