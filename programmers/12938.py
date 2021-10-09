@@ -1,5 +1,5 @@
 # Problem : https://programmers.co.kr/learn/courses/30/lessons/12938
-# Date : 2020-10-01
+# Date : 2021-10-01
 # 연습문제 최고의 집합
 
 def solution(n, s):
