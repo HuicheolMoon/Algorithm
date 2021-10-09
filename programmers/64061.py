@@ -1,5 +1,5 @@
 # Problem : https://programmers.co.kr/learn/courses/30/lessons/64061
-# Date : 2020-02-24
+# Date : 2021-02-24
 # 2019 카카오 개발자 겨울 인턴십 크레인 인형뽑기 게임
 
 def solution(board, moves):
