@@ -1,6 +1,6 @@
 # Python bisect lib; https://github.com/python/cpython/blob/main/Lib/bisect.py
 
-# arr = sorted array
+# Algorithm for sorted array
 
 def bisect_left(arr, x):
     # x 이상 원소 중 최솟값의 index
