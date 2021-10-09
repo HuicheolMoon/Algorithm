@@ -6,7 +6,9 @@
 class Solution:
     def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
         total = len(nums1) + len(nums2)
-        is_even = True if total % 2 == 0 else False
+        is_even = True
+        if total % 2 == 0:
+            is_even = False
         mid = total // 2
         idx = 0
         now = 0
@@ -22,4 +24,7 @@ class Solution:
                 target = nums2
             now = target.pop(0)
             idx += 1
-        return (pre+now)/2 if is_even else now
+        answer = now
+        if is_even:
+            answer = (pre + now) / 2
+        return answer
