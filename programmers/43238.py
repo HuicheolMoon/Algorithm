@@ -1,5 +1,5 @@
 # Problem : https://programmers.co.kr/learn/courses/30/lessons/43238
-# Date : 2021-10-03
+# Date : 2021-10-04
 # 입국심사
 
 def solution(n, times):
