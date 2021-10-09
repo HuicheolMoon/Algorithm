@@ -1,6 +1,5 @@
 # Problem : https://leetcode.com/problems/median-of-two-sorted-arrays/
-# Date : 2021-04-03
-# Median of Two Sorted Arrays
+# Date : 2021-04-23
 
 
 class Solution:
