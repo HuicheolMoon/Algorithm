@@ -40,7 +40,7 @@ def pop(heap):
     return heap
 
 
-b = [1, 9, 6, 7, 4, 6, 5, 8, 2, 5]
+b = [1, 9, 6, 7, 4, 6, 5, 8, 2]
 heapq.heapify(b)
 print(b)
 b = pop(b)
