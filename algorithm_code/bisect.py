@@ -1,5 +1,4 @@
 # Python bisect lib; https://github.com/python/cpython/blob/main/Lib/bisect.py
-
 # Algorithm for sorted array
 
 def bisect_left(arr, x):
