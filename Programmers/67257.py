@@ -31,3 +31,4 @@ def cal(expression: str, order: list) -> int:
         for num in nums:
             result *= num
     return result
+
