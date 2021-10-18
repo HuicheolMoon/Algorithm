@@ -21,3 +21,4 @@ def solution(operations):
             return "Failure"
     answer = [max(q), min(q)] if q else [0, 0]
     return answer
+
