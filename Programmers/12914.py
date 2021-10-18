@@ -16,3 +16,4 @@ def solution(n):
             dp[i] %= pivot
     answer = dp[n-1]
     return answer
+
