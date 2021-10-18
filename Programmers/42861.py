@@ -17,3 +17,4 @@ def solution(n, costs):
             answer += cost
             count += 1
     return answer
+
