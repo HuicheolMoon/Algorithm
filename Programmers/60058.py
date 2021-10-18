@@ -50,3 +50,4 @@ def clean(p: str) -> str:
     for char in p:
         answer += rev_dict[char]
     return answer
+
