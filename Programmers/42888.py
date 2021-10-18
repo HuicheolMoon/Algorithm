@@ -23,3 +23,4 @@ def solution(record):
             sent = f"{user_name}님이 나갔습니다."
         answer.append(sent)
     return answer
+
