@@ -26,3 +26,4 @@ def solution(n, arr1, arr2):
     union = union_arr(n, arr1, arr2)
     answer = number_to_sharp(union)
     return answer
+
