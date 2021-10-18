@@ -26,3 +26,4 @@ def solution(cacheSize, cities):
                 heapq.heappop(cache)
             heapq.heappush(cache, [order, city])
     return answer
+
