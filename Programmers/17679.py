@@ -27,3 +27,4 @@ def solution(m, n, board):
             new_low.extend([[".", False]] * blank)
             game_board[y] = new_low
     return answer
+
