@@ -21,3 +21,4 @@ def trans(arr, mode):
         raise Exception("mode error")
     result = [[trans_dict[y] for y in x] for x in arr]
     return result
+
