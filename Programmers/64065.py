@@ -11,3 +11,4 @@ def solution(s):
         else:
             answer.append(list(set(parts[i]) - set(parts[i-1]))[0])
     return answer
+
