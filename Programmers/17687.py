@@ -36,3 +36,4 @@ def base_n(num, n):
         result = char + result
         num //= n
     return result
+
