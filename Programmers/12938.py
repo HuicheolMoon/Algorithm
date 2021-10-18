@@ -11,3 +11,4 @@ def solution(n, s):
     delta = s % n
     answer = [base] * (n - delta) + [base + 1] * delta
     return answer
+
