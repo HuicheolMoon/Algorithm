@@ -22,3 +22,4 @@ def solution(genres, plays):
                 answer.append(stream[0])
                 times += 1
     return answer
+
