@@ -25,3 +25,4 @@ def solution(str1, str2):
     else:
         jaccard = n_interset / n_unionset
     return int(jaccard * 65536)
+
