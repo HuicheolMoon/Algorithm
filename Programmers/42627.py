@@ -21,3 +21,4 @@ def solution(jobs):
         else:
             time += 1
     return answer // n
+
