@@ -22,3 +22,4 @@ def solution(board, moves):
             basket = basket[:-2]
             answer += 2
     return answer
+
