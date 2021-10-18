@@ -34,3 +34,4 @@ def solution(numbers, hand):
             answer += "R"
             R_position = [((number - 1) // 3), ((number - 1) % 3)]
     return answer
+
