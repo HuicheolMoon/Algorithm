@@ -27,3 +27,4 @@ def solution(n, results):
         else:
             answer += 1
     return answer
+
