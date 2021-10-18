@@ -27,3 +27,4 @@ def n_zip_str(s, n):
         idx += lng
     result += len(s[idx:])
     return result
+
