@@ -10,3 +10,4 @@ def solution(n):
         dp[i] = (dp[i-2] + dp[i-1]) % 1000000007
     answer = dp[n-1]
     return answer
+
