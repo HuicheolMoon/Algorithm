@@ -15,3 +15,4 @@ def solution(m, n, puddles):
             else:
                 dp[x][y] = (dp[x-1][y] + dp[x][y-1]) % 1000000007
     return dp[-1][-1]
+
