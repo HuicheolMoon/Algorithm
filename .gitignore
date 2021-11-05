@@ -5,5 +5,5 @@ venv.bak/
 .idea/
 
 # Notepad
+etc/
 practice.py
-solution.py
