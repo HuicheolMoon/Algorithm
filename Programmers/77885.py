@@ -13,3 +13,4 @@ def solution(numbers):
         f_bin_num = bin_num[:index] + bin_num[index:index+2][::-1] + bin_num[index+2:]
         answer.append(int("0b" + f_bin_num, 2))
     return answer
+
