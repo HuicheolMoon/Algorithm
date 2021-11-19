@@ -16,8 +16,8 @@ def prim(graph):
             for dest, weight in graph[start]:
                 if start in vint or dest in vint:
                     heapq.heappush(edges, (weight, start, dest))
-        edge = heapq.heappop(edges)
         while edges:
+            edge = heapq.heappop(edges)
             if edge[1] not in vint:
                 vint.append(edge[1])
                 mst.append(edge)
@@ -26,5 +26,4 @@ def prim(graph):
                 vint.append(edge[2])
                 mst.append(edge)
                 break
-            edge = heapq.heappop(edges)
     return mst
