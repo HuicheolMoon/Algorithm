@@ -22,8 +22,8 @@ def prim(graph):
                 vint.append(edge[1])
                 mst.append(edge)
                 break
-            elif edge[0] not in vint:
-                vint.append(edge[0])
+            elif edge[2] not in vint:
+                vint.append(edge[2])
                 mst.append(edge)
                 break
             edge = heapq.heappop(edges)
