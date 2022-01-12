@@ -9,5 +9,5 @@
    - 코딩 테스트 기출 or 레벨 3 이상
 3. LeetCode, https://leetcode.com/problemset/all
    - Medium 이상
-4. SWExpertAcademy, https://swexpertacademy.com/main/main.do
+4. SWExpertAcademy, https://swexpertacademy.com
    - Difficulty 4 이상
