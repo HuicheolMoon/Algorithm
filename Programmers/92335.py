@@ -7,8 +7,8 @@ import math
 
 def solution(n, k):
     origin = convert_base(n, k)
-    cands_prime = [x for x in origin.split("0") if x != "" and is_prime(int(x))]
-    answer = len(cands_prime)
+    candidates_prime = [x for x in origin.split("0") if x != "" and is_prime(int(x))]
+    answer = len(candidates_prime)
     return answer
 
 
