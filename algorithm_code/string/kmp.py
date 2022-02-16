@@ -1,5 +1,5 @@
 # Knuth–Morris–Pratt algorithm
-# O(N+M); N: kmp algorithm itself, M: lps preprocessing
+# O(n+m); n: kmp algorithm itself, m: lps preprocessing
 # 실패함수 lps(longest proper prefix which is also suffix)를 이용하여 pattern 앞에서부터 비교
 
 
