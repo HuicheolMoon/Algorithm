@@ -1,29 +1,26 @@
 # Prim: O(E logV), vertex 선택 기반 → edge의 개수가 많은 경우
-# edge를 정렬한 후 한 vertex가 리스트에 있는 edge의 heap을 구성하고 최소 edge의 다른 vertex를 추가하여 V-1번 반복
+# 한 vertex가 tree에 속한 edge의 heap을 구성하고 최소 weight인 edge의 다른 vertex를 tree에 추가하여 V-1번 반복
 
-from collections import defaultdict
 import heapq
 
-graph = defaultdict(list) # graph[start] = list([end1, cost1], ...)
 
+# graph = [[{distance} for _ in range(v)] for __ in range(v)] : 그래프의 정보를 저장한 인접행렬
 
-def prim(graph):
+def prim():
+    v, e = map(int, input().split())    # v: # of vertices / e: # of edges
+    visited = [False for _ in range(v+1)]   # 각 node가 mst에 포함되는지 체크하는 배열
+    root = 0    # 임의의 초기 node 설정
+    visited[root] = True
     mst = []
-    vint = [0]
-    edges = []
-    while len(mst) < len(graph) - 1:
-        for start in graph.keys():
-            for dest, weight in graph[start]:
-                if start in vint or dest in vint:
-                    heapq.heappush(edges, (weight, start, dest))
-        while edges:
-            edge = heapq.heappop(edges)
-            if edge[1] not in vint:
-                vint.append(edge[1])
-                mst.append(edge)
-                break
-            elif edge[2] not in vint:
-                vint.append(edge[2])
-                mst.append(edge)
-                break
+    edge_heap = []
+    for node in range(v):
+        heapq.heappush(edge_heap, [graph[root][node], root, node])
+    while len(mst) < v - 1: # mst의 길이는 (# of vertice) - 1
+        w, s, m = heapq.heappop(edge_heap)
+        if not visited[m]:
+            visited[m] = True
+            mst.append([w, s, m])
+            for f in range(v):
+                if graph[m][f] < float('inf') and not visited[f]:
+                    heapq.heappush(edge_heap, [graph[m][f], m, f])
     return mst
