@@ -1,24 +1,27 @@
 # Dijkstra: 두 정점간의 최단거리 - 음의 가중치가 없을 때. O(E logV), heap
+# root에서부터 Greedy하게 가장 가까운 정점의 최단거리를 갱신/반복
 
-from collections import defaultdict
+
 import heapq
 
-# graph = defaultdict(dict) -> graph[x][y] = cost
 
+# graph = [[{distance} for _ in range(v)] for __ in range(v)] : 그래프의 정보를 저장한 인접행렬
+# v = (# of vertices)
+# e = (# of edges)
 
 def dijkstra(graph, root):
-    distances = {node: float("inf") for node in graph}  # root로부터의 거리
-    distances[root] = 0
+    distance_list = [float("inf") for _ in range(v)]  # root로부터의 거리
+    distance_list[root] = 0
     queue = []
-    heapq.heappush(queue, [distances[root], root])
-
+    heapq.heappush(queue, [distance_list[root], root])
     while queue:
-        cur_dist, cur_loc = heapq.heappop(queue)
-        if distances[cur_loc] >= cur_dist:
-            for new_loc, new_dist in graph[cur_loc].items():
-                dist = cur_dist + new_dist
-                if dist < distances[new_loc]:
-                    distances[new_loc] = dist
-                    heapq.heappush(queue, [distances[new_loc], new_loc])
-
-    return distances
+        distance, s = heapq.heappop(queue)
+        if distance_list[s] >= distance:
+            # 갱신 가능성이 있는 정점인 경우
+            for f in range(v):
+                if graph[s][f] < INF:
+                    new_distance = distance + graph[s][f]
+                    if new_distance < distance_list[f]:
+                        distance_list[f] = new_distance
+                        heapq.heappush(queue, [distance_list[f], f])
+    return distance_list
