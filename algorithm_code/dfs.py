@@ -1,35 +1,33 @@
-# DFS
+# DFS: recursion or stack
+
+# graph = [[{distance} for _ in range(v)] for __ in range(v)]]; 그래프의 정보를 저장한 인접행렬
+# v = (# of vertices)
+# e = (# of edges)
 
 
-# v: # of vertices
-# e: # of edges
-# graph: 2D array for distances
-# graph = [[distance for _ in range(v)] for __ in range(v)]]
-
-
-# 1. Using stack
-def dfs(root):
-    stack = [root]
-    visited = [False for _ in range(v)]
-    while stack:
-        start = stack[-1]
-        for i in range(v):
-            if graph[start][i] > 0 and not visited[i]:
-                visited[i] = True
-                stack.append(i)
-                break
-        else:
-            stack.pop()
-    return
-
-
-# 2. Recursion
+# 1. Recursion
 visited = [False for _ in range(v)]
 
 
-def dfs(start):
-    visited[start] = True
-    for i in range(v):
-        if graph[start][i] > 0 and not visited[i]:
-            dfs(i)
-    return
+def dfs(s):
+    global visited
+    for f in range(v):
+        if graph[s][f] < INF and not visited[f]:
+            visited[f] = True
+            dfs(f)
+            visited[f] = False
+
+
+# 2. Using stack
+def dfs(root):
+    visited = [False for _ in range(v)]
+    stack = [root]
+    while stack:
+        s = stack[-1]
+        for f in range(v):
+            if graph[s][f] < INF and not visited[f]:
+                visited[f] = True
+                stack.append(f)
+                break
+        else:
+            stack.pop()
