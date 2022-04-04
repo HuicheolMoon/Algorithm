@@ -16,7 +16,7 @@ def dijkstra(graph, root):
     heapq.heappush(queue, [distance_list[root], root])
     while queue:
         distance, s = heapq.heappop(queue)
-        if distance_list[s] >= distance:
+        if distance <= distance_list[s]:
             # 갱신 가능성이 있는 정점인 경우
             for f in range(v):
                 if graph[s][f] < INF:
