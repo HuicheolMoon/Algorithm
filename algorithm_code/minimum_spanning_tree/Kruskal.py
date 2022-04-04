@@ -1,26 +1,32 @@
 # Kruskal: O(E logE), edge 선택 기반 → edge의 개수가 적은 경우
-# edge를 정렬한 후 union-find list를 이용하여 V-1번 반복
+# edge를 정렬한 후 union-find list를 이용하여 해당 edge가 서로 다른 tree를 연결하면 선택하여 E번 반복
 
-from collections import defaultdict
 import heapq
 
-graph = defaultdict(list) # graph[start] = list([end1, cost1], ...)
 
+# graph = [[{distance} for _ in range(v)] for __ in range(v)] : 그래프의 정보를 저장한 인접행렬
+# v = (# of vertices)
+# e = (# of edges)
 
-def kruskal(graph):
+def kruskal():
+    def find(x):
+        if x != uf[x]:
+            uf[x] = find(uf[x])
+        return uf[x]
+
+    def union(x, y):
+        uf[find[y]] = find(x)
+
     mst = []
-    edges = []
-    keys = list(graph.keys())
-    uf = keys[:] # union function
-    for start in keys:
-        for dest, weight in graph[start]:
-            heapq.heappush(edges, (weight, start, dest))
-    while len(mst) < len(graph) - 1:
-        edge = heapq.heappop(edges)
-        if uf[edge[1]] != uf[edge[2]]:
-            mine, maxe = min(edge[1], edge[2]), max(edge[1], edge[2])
-            for i in range(len(uf)):
-                if uf[i] == maxe:
-                    uf[i] = mine
-            mst.append(edge)
+    uf = list(range(v))
+    edge_heap = []
+    for s in range(v):
+        for f in range(v):
+            if graph[s][f] < INF:
+                heapq.heappush(edge_heap, (graph[s][f], s, f))
+    while edge_heap:
+        w, s, f = heapq.heapop(edge_heap)
+        if find(s) != find(f):
+            mst.append([w, s, f])
+            union(s, f)
     return mst
