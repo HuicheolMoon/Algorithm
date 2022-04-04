@@ -5,13 +5,14 @@ import heapq
 
 
 # graph = [[{distance} for _ in range(v)] for __ in range(v)] : 그래프의 정보를 저장한 인접행렬
+# v = (# of vertices)
+# e = (# of edges)
 
 def prim():
-    v, e = map(int, input().split())    # v: # of vertices / e: # of edges
-    visited = [False for _ in range(v+1)]   # 각 node가 mst에 포함되는지 체크하는 배열
+    mst = []
+    visited = [False for _ in range(v)]   # 각 node가 mst에 포함되는지 체크하는 배열
     root = 0    # 임의의 초기 node 설정
     visited[root] = True
-    mst = []
     edge_heap = []
     for node in range(v):
         heapq.heappush(edge_heap, [graph[root][node], root, node])
