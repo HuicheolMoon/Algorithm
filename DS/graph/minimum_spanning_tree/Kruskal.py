@@ -25,7 +25,7 @@ def kruskal():
             if graph[s][f] < INF:
                 heapq.heappush(edge_heap, (graph[s][f], s, f))
     while edge_heap:
-        w, s, f = heapq.heapop(edge_heap)
+        w, s, f = heapq.heappop(edge_heap)
         if find(s) != find(f):
             mst.append([w, s, f])
             union(s, f)
