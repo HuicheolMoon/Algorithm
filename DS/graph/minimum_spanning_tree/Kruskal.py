@@ -15,7 +15,7 @@ def kruskal():
         return uf[x]
 
     def union(x, y):
-        uf[find[y]] = find(x)
+        uf[find(y)] = find(x)
 
     mst = []
     uf = list(range(v))
